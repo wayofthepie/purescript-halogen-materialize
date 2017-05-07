@@ -27,11 +27,15 @@ navBar logo (NavigationLinks linksHtml) = HH.nav
 
   logoHtml :: HH.HTML p i
   logoHtml = HH.a
-    [ HP.classes [ Class.brandLogo, Class.right ] ] 
+    [ HP.classes [ Class.brandLogo, Class.right ] ]
     [ HH.text logo ]
 
 
+-- | Build the list of links for the nav bar. The links consist of a "ul" and
+-- | subsequent nested "li"'s.
 buildNavigationLinks :: forall p i. String -> Array String -> NavigationLinks p i
 buildNavigationLinks navMenuId linkLabels = NavigationLinks $ HH.ul
-  [ HP.classes [ Class.hideOnMedAndDown, Class.left ] ]
+  [ HP.id_ navMenuId
+  , HP.classes [ Class.hideOnMedAndDown, Class.left ]
+  ]
   [ HH.ul_ (map (\label -> HH.li_ [HH.text label]) linkLabels) ]
