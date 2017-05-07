@@ -1,6 +1,6 @@
 module Materialize.NavBar where
 
-import Prelude (($))
+import Prelude (($), map)
 import Data.Array ((:))
 import Data.Maybe (Maybe, maybe)
 import Halogen.HTML as HH
@@ -20,10 +20,18 @@ navBar logo (NavigationLinks linksHtml) = HH.nav
  where
   buildInnerDiv :: HH.HTML p i
   buildInnerDiv = HH.div
-    [HP.class_ Class.navWrapper]
+    [ HP.class_ Class.navWrapper ]
     [ logoHtml
     , linksHtml
     ]
 
   logoHtml :: HH.HTML p i
-  logoHtml = HH.a [HP.class_ Class.brandLogo] [HH.text logo]
+  logoHtml = HH.a
+    [ HP.classes [ Class.brandLogo, Class.right ] ] 
+    [ HH.text logo ]
+
+
+buildNavigationLinks :: forall p i. String -> Array String -> NavigationLinks p i
+buildNavigationLinks navMenuId linkLabels = NavigationLinks $ HH.ul
+  [ HP.classes [ Class.hideOnMedAndDown, Class.left ] ]
+  [ HH.ul_ (map (\label -> HH.li_ [HH.text label]) linkLabels) ]
