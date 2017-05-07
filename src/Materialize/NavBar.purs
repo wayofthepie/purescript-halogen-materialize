@@ -1,4 +1,4 @@
-module Materialize.Navbar where
+module Materialize.NavBar where
 
 import Prelude (($))
 import Data.Array ((:))
