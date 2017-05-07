@@ -1,5 +1,5 @@
 {
-  "name": "purescript-materialize",
+  "name": "purescript-halogen-materialize",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",

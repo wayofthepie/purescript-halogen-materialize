@@ -1,2 +1,2 @@
-# purescript-materialize
-A purescript wrapper around [Materialize CSS](http://materializecss.com/about.html).
+# purescript-halogen-materialize
+A purescript halogen wrapper around [Materialize CSS](http://materializecss.com/about.html).

@@ -1,5 +1,5 @@
 {
-  "name": "purescript-materialize",
+  "name": "purescript-halogen-materialize",
   "ignore": [
     "**/.*",
     "node_modules",
