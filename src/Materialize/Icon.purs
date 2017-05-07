@@ -1,11 +1,11 @@
-module Icon where
+module Materialize.Icon where
 
 import Prelude (($))
 import Data.Array ((:))
 import Halogen.HTML as HH
 import Halogen.HTML.Properties as HP
 
-import Class as Class
+import Materialize.Class as Class
 
 newtype Icon p i = Icon (HH.HTML p i)
 
