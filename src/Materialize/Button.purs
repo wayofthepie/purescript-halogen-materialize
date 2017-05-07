@@ -5,6 +5,7 @@ import Data.Maybe (Maybe, maybe)
 import Halogen.HTML as HH
 import Halogen.HTML.Properties as HP
 
+import Materialize.Class as Class
 import Materialize.Icon
 
 -- | Create a button with the given label, class names and optional icon.
@@ -14,5 +15,5 @@ button :: forall p i. String
            -> HH.HTML p i
 button label classes maybeIcon = let tags = [HH.text label] in
   HH.a
-    [ HP.classes classes ]
+    [ HP.classes (Class.btn : classes) ]
     (maybe tags (\(Icon icon) -> icon : tags) maybeIcon)
